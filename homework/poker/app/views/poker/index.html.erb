@@ -1,0 +1,13 @@
+<%= javascript_include_tag "application" %>
+<%= stylesheet_link_tag 'application' %>
+
+<h1> Poker Cards</h1>
+
+<%= link_to "Refresh this page to deal a new hand", poker_url %>
+<hr>
+
+<%= image_tag("#{1 + rand(52)}.png", :border =>0, :class => 'choice') %>
+<%= image_tag("#{1 + rand(52)}.png", :border =>0, :class => 'choice') %>
+<%= image_tag("#{1 + rand(52)}.png", :border =>0, :class => 'choice') %>
+<%= image_tag("#{1 + rand(52)}.png", :border =>0, :class => 'choice') %>
+<%= image_tag("#{1 + rand(52)}.png", :border =>0, :class => 'choice') %>
