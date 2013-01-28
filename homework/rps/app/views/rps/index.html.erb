@@ -1,0 +1,20 @@
+<%= javascript_include_tag "application" %>
+<%= stylesheet_link_tag 'application' %>
+
+<h1>Rock, Paper, Scissors</h1>
+<hr>
+
+<% if(@player == "none") %>
+<h2>Let's play! Choose one:</h2>
+<%= link_to image_tag("Rock.jpg", :border=>0, :class => 'choice'), rps_url(:choice => 'Rock') %>
+<%= link_to image_tag("Paper.jpg", :border=>0, :class => 'choice'), rps_url(:choice => 'Paper') %>
+<%= link_to image_tag("Scissors.jpg", :border=>0, :class => 'choice'), rps_url(:choice => 'Scissors') %>
+<% else %>
+
+<h2><%= @result %>!</h2>
+<%= link_to "Play Again", rps_url %>
+<h3><%= @player %> vs <%= @computer %></h3>
+<%= image_tag("#{@player}.jpg", :border =>0, :class => 'choice') %>
+<%= image_tag("#{@computer}.jpg", :border =>0, :class => 'choice') %>
+<br>
+<% end %>
