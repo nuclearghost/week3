@@ -10,6 +10,9 @@
   <%= @photo.url %>
 </p>
 
+<img src='<%= @photo.url %>' alt='<%= @photo.title %>'>
+
+<br>
 
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Back', photos_path %>

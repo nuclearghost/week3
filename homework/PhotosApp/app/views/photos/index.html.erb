@@ -1,9 +1,13 @@
+<%= javascript_include_tag "application" %>
+<%= stylesheet_link_tag 'application' %>
+
 <h1>Listing photos</h1>
 
 <table>
   <tr>
     <th>Title</th>
     <th>Url</th>
+    <th>Preview</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +17,7 @@
   <tr>
     <td><%= photo.title %></td>
     <td><%= photo.url %></td>
+    <td><img src='<%= photo.url %>' alt='<%= photo.title %>' style="height:150px; width:150px;"></td>
     <td><%= link_to 'Show', photo %></td>
     <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
     <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
