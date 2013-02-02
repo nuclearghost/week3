@@ -1,0 +1,15 @@
+<h1>Dice Game</h1>
+<hr>
+<%= image_tag("#{@die1}.png", :border =>0, :class => 'choice') %>
+<%= image_tag("#{@die2}.png", :border =>0, :class => 'choice') %>
+<% if @result == :again %>
+<h2>Your point is <%= @point %>.</h2>
+<h3>Now try to get <%= @point %> again before you roll a 7.</h3>
+<%= link_to "Roll the dice", {:action => 'roll', :point => @point} %>
+<% elsif @result == :win %>
+<h2>You win!</h2>
+<%= link_to "Start over", dice_url %>
+<% elsif @result == :lose %>
+<h2>You lose!</h2>
+<%= link_to "Start over", dice_url %>
+<% end %>
